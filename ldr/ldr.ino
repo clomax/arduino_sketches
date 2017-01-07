@@ -1,6 +1,6 @@
 int led_pins[5] = {8,7,6,5,4};
-int values[5] = {166, 322, 498, 664, 830};
-const int MAX_LDR = 1000;
+int values[5] = {};
+const int MAX_LDR = 1024;
 
 void setup()
 {
@@ -8,17 +8,13 @@ void setup()
     for(int i=0; i<5; i++)
     {
         pinMode(led_pins[i], OUTPUT);
+        values[i] = MAX_LDR / 6 * (i+1);
     }
 }
 
 void loop()
 {
     int sensorValue = analogRead(A3);
-
-    // Reverse the lights: More light, more lights come on
-    //sensorValue = map(sensorValue, 0, 1000, 1000, 0);
-
-    Serial.println(sensorValue);
 
     for(int i=0; i<5; i++)
     {
@@ -28,5 +24,6 @@ void loop()
             digitalWrite(led_pins[i], LOW);
     }
 
+    Serial.println(sensorValue);
     delay(30);
 }
