@@ -1,7 +1,7 @@
 int led_pins[5] = {8,7,6,5,4};
 int values[5] = {};
-int MAX_SND = 100;
-float led_min_time_on = 250.0;
+int MAX_SND = 255;
+float led_min_time_on = 100.0;
 float leds_on[5] = {};
 
 void setup()

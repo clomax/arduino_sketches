@@ -4,7 +4,7 @@ int values[3];
 void setup()
 {
 	Serial.begin(9600);
-	
+
 	pinMode(led[0], OUTPUT);
 	pinMode(led[1], OUTPUT);
 	pinMode(led[2], OUTPUT);
